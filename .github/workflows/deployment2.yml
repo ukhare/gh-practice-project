@@ -1,7 +1,7 @@
 name: Deployment Exercise 2
 on: push
 jobs:
-  lint:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -10,7 +10,8 @@ jobs:
         run: npm ci
       - name: npm lint
         run: npm run lint
-  test:
+  Test:
+    needs: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -20,6 +21,7 @@ jobs:
       - name: test
         run: npm run test
   deploy:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
