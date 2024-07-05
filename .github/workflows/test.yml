@@ -1,0 +1,16 @@
+name: practice test nodejs
+on: push
+jobs:
+    deploy:
+      runs-on: ubuntu_latest
+      steps:
+        - name: npm install
+          run: npm ci
+        - name: npm lint
+          run: npm run lint
+        - name: test
+          run: npm run test
+        - name: build
+          run: npm run build 
+        - name: deploy
+          run: echo "Deploying ..."
