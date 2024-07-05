@@ -4,6 +4,8 @@ jobs:
     deploy:
       runs-on: ubuntu_latest
       steps:
+        - name: Get code
+          uses: actions/checkout@v3
         - name: npm install
           run: npm ci
         - name: npm lint
