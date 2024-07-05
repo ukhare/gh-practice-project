@@ -1,8 +1,8 @@
-name: practice test nodejs
+name: Deployment Exercise 2
 on: push
 jobs:
-  Lint:
-    runs-on: ubuntu_latest
+  lint:
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
