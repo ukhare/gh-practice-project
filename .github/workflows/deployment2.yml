@@ -29,6 +29,11 @@ jobs:
       - name: npm install
         run: npm ci
       - name: build
-        run: npm run build 
+        run: npm run build
+      - name: Export Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: dist 
       - name: deploy
         run: echo "Deploying ..."
